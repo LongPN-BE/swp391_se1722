@@ -1,13 +1,17 @@
-const express = require('express'),
-   app = express(),
-   bodyParser = require('body-parser');
+const express = require('express');
+const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser');
+
+const app = express();
+dotenv.config();
 port = process.env.PORT || 3000;
-app.listen(port);
 
-console.log('API server started on: ' + port);
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(express.json());
 
 var routes = require('./routes/routes'); //importing route
 routes(app); //register the route
+
+app.listen(8800, () => {
+   console.log("🚀 Server ready at http://localhost:8800");
+});

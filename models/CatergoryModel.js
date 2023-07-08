@@ -7,7 +7,7 @@ var Category = function (category) {
     console.log(category);
 };
 
-Category.getAllCategory = function getAllCategory(result) {
+Category.getAll = function getAll(result) {
     sql.query("Select * from swp391_se1722.category", function (err, res) {
 
         if (err) {

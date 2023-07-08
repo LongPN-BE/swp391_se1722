@@ -6,7 +6,7 @@ var Brand = function (brand) {
     console.log(brand);
 };
 
-Brand.getAllBrand = function getAllBrand(result) {
+Brand.getAll = function getAll(result) {
     sql.query("Select * from swp391_se1722.brand", function (err, res) {
 
         if (err) {
