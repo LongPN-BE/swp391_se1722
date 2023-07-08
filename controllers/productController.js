@@ -10,9 +10,9 @@ exports.list_all_products = function (req, res) {
 };
 
 exports.get_a_product = function (req, res) {
-    Product.getById(req.params.productId, function (err, user) {
+    Product.getById(req.params.productId, function (err, product) {
         if (err) { res.send(err); }
-        res.status(200).json(user);
+        res.status(200).json(product);
     });
 };
 
@@ -23,22 +23,22 @@ exports.create_a_product = function (req, res) {
         res.status(400).send({ error: true, message: 'Please provide value' });
     }
     else {
-        Product.create(new_user, function (err, user) {
+        Product.create(new_product, function (err, product) {
             if (err) { res.send(err); }
-            res.status(200).json(user);
+            res.status(200).json(product);
         });
     }
 };
 
 exports.update_a_product = function (req, res) {
-    Product.updateById(req.params.productId, new Product(req.body), function (err, user) {
+    Product.updateById(req.params.productId, new Product(req.body), function (err, product) {
         if (err) { res.send(err); }
-        res.status(200).json(user);
+        res.status(200).json(product);
     });
 };
 
 exports.delete_a_product = function (req, res) {
-    Product.remove(req.params.productId, function (err, user) {
+    Product.remove(req.params.productId, function (err, product) {
         if (err) { res.send(err); }
         res.status(200).json({ message: 'Product successfully deleted' });
     });

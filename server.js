@@ -9,8 +9,8 @@ port = process.env.PORT || 3000;
 app.use(cookieParser());
 app.use(express.json());
 
-var routes = require('./routes/routes'); //importing route
-routes(app); //register the route
+var routes = require('./routes/routes');
+routes(app);
 
 app.listen(8800, () => {
    console.log("🚀 Server ready at http://localhost:8800");

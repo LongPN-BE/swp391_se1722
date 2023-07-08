@@ -5,14 +5,14 @@ var Category = require('../models/CatergoryModel.js');
 exports.list_all_categories = function (req, res) {
     Category.getAll(function (err, category) {
         if (err) { res.send(err); }
-        res.send(category);
+        res.status(200).json(category);
     });
 };
 
 exports.get_a_category = function (req, res) {
-    Category.getById(req.params.categoryId, function (err, user) {
+    Category.getById(req.params.categoryId, function (err, category) {
         if (err) { res.send(err); }
-        res.status(200).json(user);
+        res.status(200).json(category);
     });
 };
 
@@ -31,9 +31,9 @@ exports.create_a_category = function (req, res) {
 };
 
 exports.update_a_category = function (req, res) {
-    Category.updateById(req.params.categoryId, new Category(req.body), function (err, user) {
+    Category.updateById(req.params.categoryId, new Category(req.body), function (err, category) {
         if (err) { res.send(err); }
-        res.status(200).json(user);
+        res.status(200).json(category);
     });
 };
 

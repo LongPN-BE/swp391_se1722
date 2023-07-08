@@ -39,7 +39,34 @@ module.exports = function (app) {
         .get(productCtrl.get_a_product)
         .put(productCtrl.update_a_product)
         .delete(productCtrl.delete_a_product);
+
     // review Routes
+    var reviewCtrl = require('../controllers/reviewController');
+    app.route('/reviews')
+        .get(reviewCtrl.list_all_reviews)
+        .post(reviewCtrl.create_a_review);
+    app.route('/reviews/:reviewId')
+        .get(reviewCtrl.get_a_review)
+        .put(reviewCtrl.update_a_review)
+        .delete(reviewCtrl.delete_a_review);
+
     // order Routes
+    var orderCtrl = require('../controllers/orderController');
+    app.route('/orders')
+        .get(orderCtrl.list_all_orders)
+        .post(orderCtrl.create_a_order);
+    app.route('/orders/:orderId')
+        .get(orderCtrl.get_a_order)
+        .put(orderCtrl.update_a_order)
+        .delete(orderCtrl.delete_a_order);
+
     // orderdetail Routes
+    var orderdetailCtrl = require('../controllers/orderdetailController');
+    app.route('/orderdetails')
+        .get(orderdetailCtrl.list_all_orderdetails)
+        .post(orderdetailCtrl.create_a_orderdetail);
+    app.route('/orderdetails/:orderdetailId')
+        .get(orderdetailCtrl.get_a_orderdetail)
+        .put(orderdetailCtrl.update_a_orderdetail)
+        .delete(orderdetailCtrl.delete_a_orderdetail);
 };
