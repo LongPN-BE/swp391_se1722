@@ -5,6 +5,8 @@ module.exports = function (app) {
     app.route('/users')
         .get(userCtrl.list_all_users)
         .post(userCtrl.create_a_user);
+    app.route('/users/register').post(userCtrl.register);
+    app.route('/users/login').post(userCtrl.login);
     app.route('/users/:userId')
         .get(userCtrl.get_a_user)
         .put(userCtrl.update_a_user)
@@ -70,6 +72,6 @@ module.exports = function (app) {
         .put(orderdetailCtrl.update_a_orderdetail)
         .delete(orderdetailCtrl.delete_a_orderdetail);
 
-    // trigger
-    // - 4
+    // API extra
+
 };

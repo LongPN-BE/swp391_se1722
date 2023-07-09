@@ -2,6 +2,34 @@
 
 var User = require('../models/UserModel.js');
 
+exports.login = function (req, res) {
+    var new_user = new User(req.body);
+    // handles null error
+    if (!new_user.user_name || !new_user.user_password) {
+        res.status(400).send({ error: true, message: 'Please provide username/password!' });
+    }
+    else {
+        User.login(new_user, function (err, user) {
+            if (err) { res.send(err); }
+            res.status(200).json(user);
+        });
+    }
+};
+
+exports.register = function (req, res) {
+    var new_user = new User(req.body);
+    // handles null error
+    if (!new_user.user_name || !new_user.user_password) {
+        res.status(400).send({ error: true, message: 'Please provide username/password!' });
+    }
+    else {
+        User.register(new_user, function (err, user) {
+            if (err) { res.send(err); }
+            res.status(200).json(user);
+        });
+    }
+};
+
 exports.list_all_users = function (req, res) {
     User.getAll(function (err, user) {
         if (err) { res.send(err); }
