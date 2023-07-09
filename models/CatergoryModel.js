@@ -5,6 +5,7 @@ var sql = require('../config/mysql');
 // Category object constructor
 var Category = function (category) {
     console.log(category);
+    this.category_name = category.category_name;
 };
 
 Category.getAll = function getAll(result) {

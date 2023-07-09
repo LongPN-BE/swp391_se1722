@@ -5,6 +5,11 @@ var sql = require('../config/mysql');
 // Category object constructor
 var Orderdetail = function (orderdetail) {
     console.log(orderdetail);
+    this.order_id = orderdetail.order_id;
+    this.product_id = orderdetail.product_id;
+    this.orderdetail_name = orderdetail.orderdetail_name;
+    this.orderdetail_quantity = orderdetail.orderdetail_quantity;
+    this.orderdetail_price = orderdetail.orderdetail_price;
 };
 
 Orderdetail.getAll = function getAll(result) {

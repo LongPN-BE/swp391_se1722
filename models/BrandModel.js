@@ -4,6 +4,7 @@ var sql = require('../config/mysql');
 // Brand object constructor
 var Brand = function (brand) {
     console.log(brand);
+    this.brand_name = brand.brand_name;
 };
 
 Brand.getAll = function getAll(result) {
@@ -19,7 +20,6 @@ Brand.getAll = function getAll(result) {
         }
     });
 };
-
 
 Brand.getById = function getById(brandId, result) {
     sql.query("Select * from swp391_se1722.brand where swp391_se1722.brand.brand_id = ? ", brandId, function (err, res) {

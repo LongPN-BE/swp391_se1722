@@ -69,4 +69,7 @@ module.exports = function (app) {
         .get(orderdetailCtrl.get_a_orderdetail)
         .put(orderdetailCtrl.update_a_orderdetail)
         .delete(orderdetailCtrl.delete_a_orderdetail);
+
+    // trigger
+    // - 4
 };

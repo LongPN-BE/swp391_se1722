@@ -5,6 +5,11 @@ var sql = require('../config/mysql');
 // Category object constructor
 var Review = function (review) {
     console.log(review);
+    this.user_id = this.user_id;
+    this.product_id = this.product_id;
+    this.review_name = this.review_name;
+    this.review_rating = this.review_rating;
+    this.review_comment = this.review_comment;
 };
 
 Review.getAll = function getAll(result) {

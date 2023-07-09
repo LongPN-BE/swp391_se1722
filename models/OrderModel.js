@@ -5,6 +5,15 @@ var sql = require('../config/mysql');
 // Category object constructor
 var Order = function (order) {
     console.log(order);
+    this.user_id = order.user_id
+    this.order_payment_method = order.order_payment_method;
+    this.order_tax_price = order.order_tax_price;
+    this.order_shipping_price = order.order_shipping_price;
+    this.order_total_price = order.order_total_price;
+    this.order_is_paid = order.order_is_paid;
+    this.order_paid_at = order.order_paid_at;
+    this.order_is_delivered = order.order_is_delivered;
+    this.order_delivered_at = order.order_delivered_at;
 };
 
 Order.getAll = function getAll(result) {

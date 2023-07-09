@@ -5,6 +5,16 @@ var sql = require('../config/mysql');
 // Category object constructor
 var Product = function (product) {
     console.log(product);
+    this.user_id = product.product_id;
+    this.brand_id = product.product_id;
+    this.category_id = product.product_id;
+    this.product_name = product.product_id;
+    this.product_image_url = product.product_id;
+    this.product_description = product.product_id;
+    this.product_rating = product.product_id;
+    this.product_price = product.product_id;
+    this.product_count_in_stock = product.product_id;
+    this.roduct_status = product.product_id;
 };
 
 Product.getAll = function getAll(result) {
