@@ -64,7 +64,7 @@ User.getAll = function getAll(result) {
 };
 
 User.getById = function getById(userId, result) {
-    sql.query("Select * from swp391_se1722.user where swp391_se1722.user.user_id = ? ", userId, function (err, res) {
+    sql.query("Select * from swp391_se1722.user where swp391_se1722.user.user_id = ? ", [userId], function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(err, null);
